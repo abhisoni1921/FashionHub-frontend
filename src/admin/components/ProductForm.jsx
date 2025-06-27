@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'https://fashionhub-backend-production.up.railway.app';
 
 const initialState = {
   name: '', price: '', originalPrice: '', image: '', rating: '', reviews: '', category: '', isNew: false, colors: ''

@@ -29,14 +29,14 @@ const ProductDetail = () => {
         
         // Test API connectivity first
         try {
-          const testResponse = await fetch('http://localhost:5000/api/products');
+          const testResponse = await fetch('https://fashionhub-backend-production.up.railway.app/api/products');
           console.log('API connectivity test status:', testResponse.status);
           if (!testResponse.ok) {
             throw new Error(`API server not responding: ${testResponse.status}`);
           }
         } catch (err) {
           console.error('API connectivity test failed:', err);
-          setError('Cannot connect to API server. Please ensure the server is running on http://localhost:5000');
+          setError('Cannot connect to API server. Please ensure the server is running on https://fashionhub-backend-production.up.railway.app');
           setLoading(false);
           return;
         }
@@ -47,7 +47,7 @@ const ProductDetail = () => {
         
         // First try: /api/products/:id
         try {
-          response = await fetch(`http://localhost:5000/api/products/${id}`);
+          response = await fetch(`https://fashionhub-backend-production.up.railway.app/api/products/${id}`);
           console.log('Response status (pattern 1):', response.status);
           
           if (response.ok) {
@@ -62,7 +62,7 @@ const ProductDetail = () => {
         
         // Second try: /api/product/:id
         try {
-          response = await fetch(`http://localhost:5000/api/product/${id}`);
+          response = await fetch(`https://fashionhub-backend-production.up.railway.app/api/product/${id}`);
           console.log('Response status (pattern 2):', response.status);
           
           if (response.ok) {
@@ -77,7 +77,7 @@ const ProductDetail = () => {
         
         // Third try: Get all products and find by ID
         try {
-          response = await fetch('http://localhost:5000/api/products');
+          response = await fetch('https://fashionhub-backend-production.up.railway.app/api/products');
           console.log('Response status (pattern 3):', response.status);
           
           if (response.ok) {

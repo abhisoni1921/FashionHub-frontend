@@ -19,7 +19,7 @@ const Collection = () => {
         setLoading(true);
         setError(null);
         
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch('https://fashionhub-backend-production.up.railway.app/api/products');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

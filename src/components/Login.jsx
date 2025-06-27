@@ -56,7 +56,7 @@ const Login = ({ isOpen, onClose }) => {
           setLoading(false);
           return;
         }
-        const res = await fetch('http://localhost:5000/api/auth/register', {
+        const res = await fetch('https://fashionhub-backend-production.up.railway.app/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -76,7 +76,7 @@ const Login = ({ isOpen, onClose }) => {
         setFormData({ email: '', password: '', confirmPassword: '', name: '', phone: '' });
         setAgreedToTerms(false);
       } else {
-        const res = await fetch('http://localhost:5000/api/auth/login', {
+        const res = await fetch('https://fashionhub-backend-production.up.railway.app/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
